@@ -14,3 +14,16 @@ service:
   port: 4000
   targetPort: 5656
   type: LoadBalancer
+
+mongo:
+  labels:
+    app: mongodb
+  containers:
+    name: yash-organic
+    repository: mongo
+    tag: latest
+  port: 27071
+  env:
+    name: MONGO_INITDB_DATABASE
+    value: "myDatabase"
+
