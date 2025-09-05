@@ -14,7 +14,7 @@ spec:
         app: {{ .Values.mongo.labels.app }}
     spec:
       containers:
-      - name: {{ .Values.mongo.name }}
+      - name: {{ .Values.mongo.containers.name }}
         image: "{{ .Values.mongo.containers.repository }}:{{ .Values.mongo.containers.tag }}"
         ports:
         - containerPort: {{ .Values.mongo.port }}
