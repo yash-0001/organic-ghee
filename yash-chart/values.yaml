@@ -1,0 +1,16 @@
+namespace: yash
+replicas: 2
+labels:
+  app: node-app 
+containers:
+  repository: yash2107/yash-organic
+  tag: v4
+port: 5656
+env:
+  name: NODE_ENV
+  value: "production"
+
+service:
+  port: 4000
+  targetPort: 5656
+  type: LoadBalancer
